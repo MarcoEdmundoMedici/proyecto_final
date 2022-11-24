@@ -1,0 +1,12 @@
+
+.marca {
+    padding: 2rem;
+    &__name {
+        font-weight: bold;
+        padding: 3rem 0;
+    }
+    &__img {
+        height: 300px;
+        width: 300px;
+    }
+}

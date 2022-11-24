@@ -1,0 +1,97 @@
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 0 1rem;
+    top: 0;
+    margin: 0 auto;
+    transition: all 0.2s ease-in-out;
+    background-color: $blanco;
+    border-bottom: 2px solid $text-color;
+  }
+  
+#check {
+    display: none;
+}
+  
+.navigator {
+    padding: 0 2rem;
+    color: $text-color;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+    @include flex(row, space-between, center);
+    &__container {
+        gap: 1rem;
+        @include flex(row, center, center);
+    }
+    &__item {
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        padding: 1rem 0;
+    }
+    &__item::after {
+        content: "";
+        background-color: $primario;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        height: 2px;
+        width: 100%;
+        transition: transform 0.2s ease-in-out;
+    }
+    &__item:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+  
+  
+.checkbtn {
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    cursor: pointer;
+    display: none;
+}
+  
+  @media (max-width: 768px) {
+    .checkbtn {
+        margin-top: 10px;
+        display: block;
+    }
+    .navigator {
+        flex-direction: row-reverse;
+        &__container {
+            background-color: $blanco;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            text-align: center;
+            z-index: -1;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.5s ease-in-out;
+            height: 100vh;
+            width: 100%;
+        }
+        &__item {
+            display: block;
+            margin: 1rem 0;
+            font-size: 20px;
+            color: $text-color;
+        }
+        &__item::after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+  }

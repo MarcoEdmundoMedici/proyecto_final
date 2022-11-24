@@ -1,9 +1,3 @@
-@mixin reset-pm {
-    margin: 0;
-    padding: 0;
-}
-
-
 
 @mixin flex ( $dir: column, $just: center, $align: center ) {
     display: flex;

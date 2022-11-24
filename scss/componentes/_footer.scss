@@ -1,0 +1,18 @@
+.footer {
+    width: 100%;
+    background-color: $blanco;
+    border-top: 1px solid $text-color;
+    &__contenedor {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+        padding: 30px 2rem;
+        @include flex(row, space-between);
+    }
+    &__image {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+    }
+  }
+  

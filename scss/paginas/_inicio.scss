@@ -1,0 +1,74 @@
+.hero {
+    text-align: center;
+    background-image: url("../imagenes/background.jpg");
+    height: 60vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    &__content {
+        height: 100%;
+        backdrop-filter: grayscale(100%);
+        @include flex;
+    }
+    &__title {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: $blanco;
+        text-shadow: 2px 2px 2px $primario;
+        margin-bottom: 10px;
+    }
+    &__subtitle {
+        color: $blanco;
+        font-size: 2rem;
+        text-shadow: 2px 2px 20px $text-color;
+    }
+}
+  
+.banner {
+    @include flex;
+    & .section {
+        position: absolute;
+        z-index: 2;
+    }
+    & .section__title {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: $blanco;
+        text-shadow: 2px 2px 2px $primario;
+        margin-bottom: 10px;
+    }
+}
+
+#rm1 {
+    background-image: url(../../imagenes/YamahaR1M.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    filter: grayscale(100%);
+    width: 100%;
+    height: 50vh;
+}
+
+
+#map {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+@media screen and (min-width: 768px){
+    .hero {
+        height: 80vh;
+    }
+    #map {
+        width: 60%;
+    }
+}
+@media screen and (min-width: 900px){
+    .hero {
+        height: 100vh;
+    }
+}
